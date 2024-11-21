@@ -5,26 +5,37 @@ import "./index.css";
 import SeatUI from "../src/components/SeatUI/SeatUI";
 import SeatBookingForm from "../src/components/SeatBookingForm/SeatBookingForm";
 import AdminPanel from "../src/components/AdminPanel/AdminPanel";
+import { Provider } from "react-redux";
+import { store } from "./Store/Store";
+import App from "./App";
 
 // Define routes
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <SeatUI />, // Default route (SeatUI)
-  },
-  {
-    path: "/booking/:busNo/:seatNo",
-    element: <SeatBookingForm></SeatBookingForm>, 
-  },
-  {
-    path: "/admin",
-    element: <AdminPanel></AdminPanel>,
+    path: "/", // Parent route for all children
+    element: <App />, // App serves as the layout component
+    children: [
+      {
+        path: "/", // Default route (SeatUI)
+        element: <SeatUI />,
+      },
+      {
+        path: "/booking/:busNo/:seatNo",
+        element: <SeatBookingForm />,
+      },
+      {
+        path: "/admin",
+        element: <AdminPanel />,
+      },
+    ],
   },
 ]);
 
 // Render the application
 createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );

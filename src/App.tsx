@@ -1,20 +1,15 @@
 
-import './App.css'
-import SeatUI from '../src/components/SeatUI/SeatUI'
-
+import { Outlet } from "react-router-dom"; 
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
-
-
   return (
     <>
-<SeatUI></SeatUI>
-
-</>
-  
-  )
- 
-
+      <Navbar /> 
+      <Outlet /> {/* This renders the current route's component */}
+    </>
+  );
 }
 
-export default App
+export default App;
+
