@@ -45,7 +45,9 @@ const Navbar = () => {
               aria-label="Menu"
               onClick={() => {
                 const mobileMenu = document.getElementById("mobile-menu");
-                mobileMenu.classList.toggle("hidden");
+                if (mobileMenu) {
+                  mobileMenu.classList.toggle("hidden");
+                }
               }}
             >
               <svg
