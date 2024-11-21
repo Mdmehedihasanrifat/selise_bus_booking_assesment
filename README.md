@@ -51,11 +51,13 @@ TailwindCSS: Responsive and modern UI design.
 
 📄 How to Run Locally
 Clone the Repository:
+
 git clone https://github.com/your-username/selise-bus-service.git
 cd selise-bus-service
 Install Dependencies:
 
 bash:
+
 npm install
 Start the Development Server:
 
