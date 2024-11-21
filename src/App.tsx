@@ -1,12 +1,16 @@
 
 import './App.css'
-import SeatUI from './components/SeatUi/SeatUi'
+import SeatUI from '../src/components/SeatUI/SeatUI'
+
 
 function App() {
 
 
   return (
+    <>
 <SeatUI></SeatUI>
+
+</>
   
   )
  
