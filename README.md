@@ -3,7 +3,7 @@ Selise Bus Service - Seat Booking System
 Selise Bus Service is a web-based application designed to streamline the process of booking bus seats, manage reservations, and provide administrative oversight with an easy-to-use interface.
 
 🚀 Live Demo
-https://moonlit-hamster-072152.netlify.app/
+https://selise-assesment-bus-booking-072152.netlify.app/
 
 🛠️ Features
 User Features:
