@@ -136,19 +136,18 @@ npm install
 Start the Development Server:
 
 bash
-Copy code
+
 npm start
-The application will run on http://localhost:3000.
+The application will run on http://localhost:5173.
 
 Build for Production:
 
 bash
-Copy code
+
 npm run build
 
 
 📂 Project Structure
-plaintext
 src/
 ├── components/
 │   ├── AdminPanel/         # Admin Panel with booking overview
