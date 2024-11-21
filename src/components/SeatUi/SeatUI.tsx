@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../Store/hooks";
 import { loadBusData } from "../../Store/busSlice";
-import { User, AlertCircle, Clock, Bus,ShipWheel } from "lucide-react";
+import { User, AlertCircle, Clock, Bus,LifeBuoy  } from "lucide-react";
 
 const SeatUI: React.FC = () => {
   const [selectedBus, setSelectedBus] = useState<string>("S098"); // Default selected bus
@@ -120,7 +120,7 @@ const SeatUI: React.FC = () => {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                 <ShipWheel/> Driver
+                 <LifeBuoy/> Driver
                 </motion.div>
               </div>
             </div>
