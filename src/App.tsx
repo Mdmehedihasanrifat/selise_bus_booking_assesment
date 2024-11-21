@@ -1,14 +1,12 @@
 
 import './App.css'
+import SeatUI from './components/SeatUi/SeatUi'
 
 function App() {
 
 
   return (
-
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+<SeatUI></SeatUI>
   
   )
  
