@@ -64,7 +64,7 @@ const AdminPanel: React.FC = () => {
               key={seatNo}
               className={`w-16 h-16 m-1 border rounded-lg ${
                 isBooked ? "bg-gray-400 cursor-pointer" : "bg-white"
-              }`}
+              } ${col === 1 ? "mr-10" : ""}`} // Add margin-right to the first column
               onClick={() => handleSeatClick(seatNo)}
             >
               {seatNo}
@@ -74,7 +74,7 @@ const AdminPanel: React.FC = () => {
       </div>
     ));
   };
-
+  
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-2xl">
