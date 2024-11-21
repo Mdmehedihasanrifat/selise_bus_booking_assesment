@@ -124,8 +124,8 @@ Clone the Repository:
 
 bash
 Copy code
-git clone https://github.com/your-username/selise-bus-service.git
-cd selise-bus-service
+git clone https://github.com/Mdmehedihasanrifat/selise_bus_booking_assesment.git
+cd selise_bus_booking_assesment
 Install Dependencies:
 
 bash
