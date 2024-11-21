@@ -13,7 +13,7 @@ import App from "./App";
 const router = createBrowserRouter([
   {
     path: "/", // Parent route for all children
-    element: <App />, // App serves as the layout component
+    element: <App />, 
     children: [
       {
         path: "/", // Default route (SeatUI)

@@ -1,37 +1,36 @@
+"use client";
 
-'use client'
-
-import React, { useState } from "react"
-import { useParams, useNavigate } from "react-router-dom"
-import { useAppDispatch } from "../../Store/hooks"
-import { bookSeat } from "../../Store/busSlice"
-import { toast, ToastContainer } from "react-toastify"
-import "react-toastify/dist/ReactToastify.css"
-import { motion } from "framer-motion"
-import { User, Bus, MapPin, Clock, ArrowLeft } from 'lucide-react'
+import React, { useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../../Store/hooks";
+import { bookSeat } from "../../Store/busSlice";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { motion } from "framer-motion";
+import { User, Bus, MapPin, Clock, ArrowLeft } from "lucide-react";
 
 const SeatBookingForm: React.FC = () => {
-  const dispatch = useAppDispatch()
-  const navigate = useNavigate()
-  const { busNo, seatNo } = useParams<{ busNo: string; seatNo: string }>()
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const { busNo, seatNo } = useParams<{ busNo: string; seatNo: string }>();
   const [formData, setFormData] = useState({
     name: "",
     destination: "",
     time: "",
-  })
+  });
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
-  }
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
 
     if (!formData.name || !formData.destination || !formData.time) {
-      toast.error("Please fill in all fields", { position: "top-center" })
-      return
+      toast.error("Please fill in all fields", { position: "top-center" });
+      return;
     }
 
     if (busNo && seatNo) {
@@ -41,15 +40,15 @@ const SeatBookingForm: React.FC = () => {
           seatNo,
           booking: formData,
         })
-      )
+      );
       toast.success(`Seat ${seatNo} booked successfully!`, {
         position: "top-center",
-      })
+      });
       setTimeout(() => {
-        navigate("/")
-      }, 1000)
+        navigate("/");
+      }, 1000);
     }
-  }
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4">
@@ -69,11 +68,16 @@ const SeatBookingForm: React.FC = () => {
           >
             <ArrowLeft size={24} />
           </motion.button>
-          <h1 className="text-2xl font-bold text-center text-gray-800 flex-grow">Seat Booking</h1>
+          <h1 className="text-2xl font-bold text-center text-gray-800 flex-grow">
+            Seat Booking
+          </h1>
         </div>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+            <label
+              htmlFor="name"
+              className="block text-sm font-medium text-gray-700 mb-1 flex items-center"
+            >
               <User className="mr-2 text-blue-500" size={16} />
               Name
             </label>
@@ -89,7 +93,10 @@ const SeatBookingForm: React.FC = () => {
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label htmlFor="busNo" className="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+              <label
+                htmlFor="busNo"
+                className="block text-sm font-medium text-gray-700 mb-1 flex items-center"
+              >
                 <Bus className="mr-2 text-blue-500" size={16} />
                 Bus No
               </label>
@@ -102,7 +109,10 @@ const SeatBookingForm: React.FC = () => {
               />
             </div>
             <div>
-              <label htmlFor="seatNo" className="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+              <label
+                htmlFor="seatNo"
+                className="block text-sm font-medium text-gray-700 mb-1 flex items-center"
+              >
                 <MapPin className="mr-2 text-blue-500" size={16} />
                 Seat No
               </label>
@@ -116,7 +126,10 @@ const SeatBookingForm: React.FC = () => {
             </div>
           </div>
           <div>
-            <label htmlFor="destination" className="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+            <label
+              htmlFor="destination"
+              className="block text-sm font-medium text-gray-700 mb-1 flex items-center"
+            >
               <MapPin className="mr-2 text-blue-500" size={16} />
               Select Destination
             </label>
@@ -134,7 +147,10 @@ const SeatBookingForm: React.FC = () => {
             </select>
           </div>
           <div>
-            <label htmlFor="time" className="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+            <label
+              htmlFor="time"
+              className="block text-sm font-medium text-gray-700 mb-1 flex items-center"
+            >
               <Clock className="mr-2 text-blue-500" size={16} />
               Select Time
             </label>
@@ -164,7 +180,7 @@ const SeatBookingForm: React.FC = () => {
       </motion.div>
       <ToastContainer />
     </div>
-  )
-}
+  );
+};
 
-export default SeatBookingForm
+export default SeatBookingForm;
